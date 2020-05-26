@@ -2,9 +2,8 @@ const data = require('./data');
 
 const eLocation = (town) => {
     const locations = data;
-
-     return data.filter(e => e.venue.town.includes(town)).map(e => e);
-
+    town = town.trim().toLowerCase();
+    return data.filter(e => e.venue.town.toLowerCase().includes(town)).map(e => e.eventName);
 };
 
-console.log(eLocation('Manc'))
+console.log(eLocation('  MAN'))
